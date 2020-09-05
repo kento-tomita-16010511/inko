@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Walk : MonoBehaviour
 {
-    float speed = 3.0f;
+    float speed = 10.0f;
 
     void Update()
     {
