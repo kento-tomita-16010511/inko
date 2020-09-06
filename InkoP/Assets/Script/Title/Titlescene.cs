@@ -1,27 +1,31 @@
-﻿using UniRx;
+﻿using Const;
+using UniRx;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
-public class Titlescene : MonoBehaviour
+namespace Title
 {
-    [SerializeField] private Button _anyButton;
-
-    private void Awake()
+    public class Titlescene : Scene.SceneBase
     {
-        //画面全体を押したとき
-        _anyButton.onClick.AsObservable().Subscribe(_ 
-            => 
-        　　{
-              SceneManager.LoadScene ("green");
+        [SerializeField] private TitleSceneView _view;
+
+        private void Awake()
+        {
+           
+        }
+
+        protected override void OnAwake()
+        {
+            SetEvent();
+        }
+
+        private void SetEvent()
+        {
+            //画面全体を押したとき
+            _view.AnyButtonEvent.AsObservable().Subscribe(_ =>
+            {
+                //これでシーン移動
+                SceneLoad(SceneConst.MainSceneName);
             }).AddTo(this);
-    }
-
-    private void SetEvent()
-    {
-    }
-
-    private void SetBind()
-    {
+        }
     }
 }
