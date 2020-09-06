@@ -7,13 +7,8 @@ namespace Title
     public class Titlescene : Scene.SceneBase
     {
         [SerializeField] private TitleSceneView _view;
-
-        private void Awake()
-        {
-           
-        }
-
-        protected override void OnAwake()
+        
+        protected override void Awake()
         {
             SetEvent();
         }

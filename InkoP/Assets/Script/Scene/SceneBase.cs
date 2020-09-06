@@ -14,19 +14,11 @@ namespace Scene
     {
         [SerializeField] private CanvasGroup _fadeCanvas;
         [SerializeField] private Camera _fadeCamera;
-        private readonly float _fadeoutTime = 2.5f;
+        private readonly float _fadeoutTime = 0.5f;
 
-        private void Awake() {
+        protected virtual void Awake() {
             // イベントにイベントハンドラーを追加
             UnityEngine.SceneManagement.SceneManager.sceneLoaded += SceneLoaded;
-            _fadeCamera.cullingMask = LayerMask.NameToLayer("SceneFade");
-            Debug.LogError("aa");
-            OnAwake();
-        }
-
-        protected virtual void OnAwake()
-        {
-           
         }
 
         /// <summary>
