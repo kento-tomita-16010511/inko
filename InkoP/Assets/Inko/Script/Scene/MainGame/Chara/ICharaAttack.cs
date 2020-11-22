@@ -1,6 +1,6 @@
 ﻿namespace Assets.Inko.Script.Scene.MainGame.Chara
 {
-	public class ICharaAttack 
+	public interface ICharaAttack 
 	{
 		void Attack();
 	}

@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
+    path: Assets/Inko/Scenes/MainScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/TitleScene.unity
+    path: Assets/Inko/Scenes/TitleScene.unity
     guid: f15cb8a3b64f3c544b77b0fa4e02d8ca
   m_configObjects: {}

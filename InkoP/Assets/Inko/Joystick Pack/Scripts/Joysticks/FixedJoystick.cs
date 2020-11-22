@@ -1,8 +1,5 @@
 ﻿using Assets.Inko.Script.JoystickEvent;
-using System.Collections;
-using System.Collections.Generic;
 using UniRx;
-using UnityEngine;
 
 public class FixedJoystick : Joystick
 {
@@ -15,11 +12,11 @@ public class FixedJoystick : Joystick
 	{
 		//横軸代入
 		this.ObserveEveryValueChanged(it => it.Horizontal)
-			  .Subscribe(it => JoysitickManager.Instance.Horizontal = Horizontal)
+			  .Subscribe(it => JoysitickManager.Instance.SetHorizontal(Horizontal))
 				.AddTo(this);
 		//縦軸代入
 		this.ObserveEveryValueChanged(it => it.Vertical)
-			  .Subscribe(it => JoysitickManager.Instance.Vertical = Vertical)
+			  .Subscribe(it => JoysitickManager.Instance.SetVertical(Vertical))
 				.AddTo(this);
 	}
 }

@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using UnityEditor;
+using Assets.Inko.Script.JoystickEvent;
 
 namespace Assets.Inko.Script.Scene.MainGame.Chara.Player
 {
-	public class Player : CharaBase, ICharaIdle, ICharaAttack, ICharaMove, ICharaJump
+	public class Player : CharaBasePresenter, ICharaIdle, ICharaAttack, ICharaMove, ICharaJump
 	{
 		public void Attack()
 		{

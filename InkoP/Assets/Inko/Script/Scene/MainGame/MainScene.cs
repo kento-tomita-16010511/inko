@@ -1,16 +1,6 @@
-﻿using UnityEngine;
+﻿using Scene;
 
-public class MainScene : MonoBehaviour
+public class MainScene : SceneBase
 {
-  // Start is called before the first frame update
-  void Start()
-  {
-
-  }
-
-  // Update is called once per frame
-  void Update()
-  {
-
-  }
+  
 }

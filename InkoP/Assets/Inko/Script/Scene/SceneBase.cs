@@ -12,8 +12,8 @@ namespace Scene
     /// </summary>
     public class SceneBase : MonoBehaviour
     {
-        [SerializeField] private CanvasGroup _fadeCanvas;
-        [SerializeField] private Camera _fadeCamera;
+        [SerializeField] protected CanvasGroup _fadeCanvas;
+        [SerializeField] protected Camera _fadeCamera;
         private readonly float _fadeoutTime = 0.5f;
 
         protected virtual void Awake() {
