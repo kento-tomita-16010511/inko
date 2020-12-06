@@ -1752,6 +1752,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1947635561}
+  - component: {fileID: 1947635563}
+  - component: {fileID: 1947635562}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -1774,6 +1776,31 @@ Transform:
   m_Father: {fileID: 2108150903}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1947635562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947635560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b363adca9f643c4ca0046eaf5f84a99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _view: {fileID: 1947635563}
+--- !u!114 &1947635563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947635560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d5959d2388025448245a8142eea705, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2074044111
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,6 +1963,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fadeCanvas: {fileID: 2083433234}
   _fadeCamera: {fileID: 2083433233}
+--- !u!114 &2083433236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083433232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1437527cc62c82409c02369566ee486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2083433237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083433232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f562a18b09dc01d4d99f0634122ac786, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _view: {fileID: 2083433236}
 --- !u!1 &2108150902
 GameObject:
   m_ObjectHideFlags: 0

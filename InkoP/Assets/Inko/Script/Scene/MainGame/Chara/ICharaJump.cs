@@ -1,7 +1,9 @@
-﻿namespace Assets.Inko.Script.Scene.MainGame.Chara
+﻿using System.Collections;
+
+namespace Assets.Inko.Script.Scene.MainGame.Chara
 {
 	public interface ICharaJump
-	{
-		void Jump();
+    {
+        IEnumerator Jump();
 	}
 }
