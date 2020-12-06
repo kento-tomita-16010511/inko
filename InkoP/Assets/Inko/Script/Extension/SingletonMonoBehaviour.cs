@@ -1,52 +1,50 @@
 ﻿using UnityEngine;
 using System;
 
-/// <summary>
-/// シングルトン基底クラス　テンプレ
-/// </summary>
-/// <typeparam name="T"></typeparam>
-public abstract class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour
+namespace Assets.Inko.Script.Extension
 {
 
-    private static T instance;
-    public static T Instance
+    /// <summary>
+    /// シングルトン基底クラス　テンプレ
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public abstract class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour
     {
-        get
-        {
-            if (instance == null)
-            {
-                Type t = typeof(T);
 
-                instance = (T)FindObjectOfType(t);
-                if (instance == null)
-                {
-                    Debug.LogError(t + " をアタッチしているGameObjectはありません");
+        private static T instance;
+        public static T Instance {
+            get {
+                if (instance == null) {
+                    Type t = typeof(T);
+
+                    instance = (T)FindObjectOfType(t);
+                    if (instance == null) {
+                        Debug.LogError(t + " をアタッチしているGameObjectはありません");
+                    }
                 }
+
+                return instance;
             }
-
-            return instance;
         }
-    }
 
-    virtual protected void Awake()
-    {
-        // 他のゲームオブジェクトにアタッチされているか調べる
-        // アタッチされている場合は破棄する。
-        CheckInstance();
-    }
-
-    protected bool CheckInstance()
-    {
-        if (instance == null)
+        virtual protected void Awake()
         {
-            instance = this as T;
-            return true;
+            // 他のゲームオブジェクトにアタッチされているか調べる
+            // アタッチされている場合は破棄する。
+            CheckInstance();
         }
-        else if (Instance == this)
+
+        protected bool CheckInstance()
         {
-            return true;
+            if (instance == null) {
+                instance = this as T;
+                return true;
+            }
+            else if (Instance == this) {
+                return true;
+            }
+            Destroy(this);
+            return false;
         }
-        Destroy(this);
-        return false;
     }
 }

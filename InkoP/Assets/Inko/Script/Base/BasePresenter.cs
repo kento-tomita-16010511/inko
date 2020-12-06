@@ -20,23 +20,25 @@ namespace Assets.Inko.Script.Base
         /// <summary>
         /// 表示・入出力処理(UI)
         /// </summary>
-        public V View;
+        [SerializeField] private V _view;
+        public V View => _view;
 
         /// <summary>
         /// 購読前初期化
         /// </summary>
-        abstract protected void InitializingBeforeSubsc();
+        protected virtual void InitializingBeforeSubsc() {}
 
         /// <summary>
         /// 購読後
         /// </summary>
-        abstract protected void InitializingAfterSubsc();
+        protected virtual void InitializingAfterSubsc() { }
 
         /// <summary>
         /// Awake
         /// </summary>
         private void Awake()
         {
+            Model = new M();
             InitializingBeforeSubsc();
             Bind();
             SetEvent();
@@ -46,12 +48,12 @@ namespace Assets.Inko.Script.Base
         /// <summary>
         /// View購読
         /// </summary>
-        abstract protected void SetEvent();
+        protected virtual void SetEvent() { }
 
         /// <summary>
         /// Model購読
         /// </summary>
-        abstract protected void Bind();
+        protected virtual void Bind() { }
 
     }
 }
