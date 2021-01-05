@@ -1,18 +1,13 @@
-﻿using System.Collections;
-
-using Assets.Inko.Script.Enum;
-using Assets.Inko.Script.JoystickEvent;
-
-using UniRx;
-
-using UnityEngine;
+﻿
+using System.Collections;
 
 /// <summary>
-/// playerのpresenterクラス
+/// NPCのPresenter
 /// </summary>
-namespace Assets.Inko.Script.Scene.MainGame.Chara.Player
+
+namespace Assets.Inko.Script.Scene.MainGame.Chara.NPC
 {
-    public class PlayerPresenter : CharaBasePresenter<PlayerModel, PlayerView>
+    public class NPCPresenter : CharaBasePresenter<NPCModel, NPCView>
     {
         /// <summary>
         /// アイドル
@@ -44,26 +39,12 @@ namespace Assets.Inko.Script.Scene.MainGame.Chara.Player
         /// </summary>
         public override IEnumerator Move()
         {
-            var joy = JoysitickManager.Instance;
-            var forward = new Vector3(joy.Horizontal, 0, joy.Vertical);
-            transform.position += forward * Model.MoveSpeed * Time.deltaTime;
-
             yield return null;
         }
 
         protected override void Bind()
         {
             base.Bind();
-            //ジョイスティック監視
-            JoysitickManager.Instance.Forward.Subscribe(it => {
-                if (it.x == 0 && it.y == 0) {
-                    Model.SetCharaState(CharaEnum.CharaState.Idle);
-                }
-                else {
-                    Model.SetCharaState(CharaEnum.CharaState.Move);
-                }
-            }).AddTo(this);
-
         }
 
         protected override void InitializingAfterSubsc()

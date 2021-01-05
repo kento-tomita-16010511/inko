@@ -1,12 +1,11 @@
 ﻿using Assets.Inko.Script.UI.Character;
 
-
 /// <summary>
-/// playerのモデルクラス
+/// NPCのモデルクラス
 /// </summary>
-namespace Assets.Inko.Script.Scene.MainGame.Chara.Player
+namespace Assets.Inko.Script.Scene.MainGame.Chara.NPC
 {
-    public class PlayerModel : CharaBaseModel
+    public class NPCModel : CharaBaseModel
     {
         /// <summary>
         /// キャラスピード
@@ -19,7 +18,7 @@ namespace Assets.Inko.Script.Scene.MainGame.Chara.Player
             base.initialized();
 
             //立ち絵データ作成
-            _standingImageData = new CharacterStandingImageDataModel(Const.ResourcesPathConst.PlayerStandingPicturePath);
+            _standingImageData = new CharacterStandingImageDataModel(Const.ResourcesPathConst.MainMobStandingPicturePath);
         }
     }
 }
