@@ -1,17 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
+/// <summary>
+/// タイトルシーンのView
+/// </summary>
 namespace Title
 {
     public class TitleSceneView : MonoBehaviour
     {
         /// <summary>
+        /// タイトルのキャンパスグループ
+        /// </summary>
+        [SerializeField] private CanvasGroup _titleCanvasGroup;
+
+        public CanvasGroup TitleCanvasGroup => _titleCanvasGroup;
+
+        /// <summary>
         /// 全体のタップ
         /// </summary>
         [SerializeField] private Button _anyButton;
-        public Button.ButtonClickedEvent AnyButtonEvent => _anyButton.onClick;
+
+        public Button AnyButton => _anyButton;
 
         /// <summary>
         /// タイトル
@@ -19,12 +29,24 @@ namespace Title
         [SerializeField] private Text _titleText;
 
         /// <summary>
-        /// Scene演出組み込む予定
+        /// ビデオ
         /// </summary>
-        /// <returns></returns>
-        public IEnumerator SceneNextAnimation()
-        {
-            yield return null;
-        }
+        [SerializeField] private VideoPlayer _video;
+
+        public VideoPlayer VideoPlayer => _video;
+
+        /// <summary>
+        /// ローディングのアニメーション
+        /// </summary>
+        [SerializeField] private Animator _loadingAnimator;
+
+        public Animator LoadingAnimator => _loadingAnimator;
+
+        /// <summary>
+        /// 注意書きのキャンパスグループ
+        /// </summary>
+        [SerializeField] private CanvasGroup _precautionaryStatementGroup;
+
+        public CanvasGroup PrecautionaryStatementGroup => _precautionaryStatementGroup;
     }
 }

@@ -6,8 +6,8 @@ using UnityEngine;
 
 namespace Assets.Inko.Script.Base
 {
-  public class BaseView : MonoBehaviour
-  {
- 
-  }
+    public class BaseView : MonoBehaviour
+    {
+
+    }
 }

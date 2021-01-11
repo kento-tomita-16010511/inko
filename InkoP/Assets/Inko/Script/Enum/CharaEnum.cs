@@ -5,10 +5,11 @@ namespace Assets.Inko.Script.Enum
 {
     public class CharaEnum
     {
+
         /// <summary>
         ///Character状態
         /// </summary>
-        public enum CharaState 
+        public enum CharaState
         {
             None = 0,
             Idle = 1,

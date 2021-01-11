@@ -8,14 +8,14 @@ using UnityEngine;
 
 namespace Assets.Inko.Script.Base
 {
-    public abstract class BasePresenter<M,V> : MonoBehaviour
-        where M : BaseModel , new()
-        where V : BaseView  
+    public abstract class BasePresenter<M, V> : MonoBehaviour
+        where M : BaseModel, new()
+        where V : BaseView
     {
         /// <summary>
         /// データ処理(内部ロジック)
         /// </summary>
-        public  M Model = null;
+        public M Model = null;
 
         /// <summary>
         /// 表示・入出力処理(UI)
@@ -26,7 +26,7 @@ namespace Assets.Inko.Script.Base
         /// <summary>
         /// 購読前初期化
         /// </summary>
-        protected virtual void InitializingBeforeSubsc() {}
+        protected virtual void InitializingBeforeSubsc() { }
 
         /// <summary>
         /// 購読後
